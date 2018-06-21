@@ -99,10 +99,20 @@ namespace GameStoreUniversal
                 }
                 else
                 {
-                    txbErrorMessage.Text = await ServiceClient.PostOrderAsync(createNewOrder(_Game));
-                    updateGameQuantity();
-                    txbErrorMessage.Text = await ServiceClient.UpdateGameAsync(_Game);
+                    int lcAmountOrdered = Convert.ToInt16(txtOrderQuantity.Text);
+                    if (lcAmountOrdered > 0 && lcAmountOrdered <= _Game.Quantity)
+                    {
+                        txbErrorMessage.Text = await ServiceClient.PostOrderAsync(createNewOrder(_Game));
+                        updateGameQuantity();
+                        txbErrorMessage.Text = await ServiceClient.UpdateGameAsync(_Game);
+                    }
+                    else
+                    {
+                        txbErrorMessage.Text = "Cannot order the specified amount";
+                    }
                 }
+
+                
             }
             catch (Exception ex)
             {
