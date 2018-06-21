@@ -1,0 +1,32 @@
+﻿<Page
+    x:Class="GameStoreUniversal.pgGenre"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:GameStoreUniversal"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" Loaded="Page_Loaded">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="101*"/>
+            <ColumnDefinition Width="259*"/>
+        </Grid.ColumnDefinitions>
+        <TextBlock x:Name="textBlock" HorizontalAlignment="Center" Text="Game Store App" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="36" Margin="0,10,0,0" Grid.ColumnSpan="2"/>
+        <TextBlock x:Name="txbGenreName" HorizontalAlignment="Left" Text="_ Games" TextWrapping="Wrap" VerticalAlignment="Top" Margin="41,63,0,0" FontSize="18" Grid.Column="1" TextAlignment="Center"/>
+        <ListBox x:Name="lstGames" HorizontalAlignment="Center" Height="389" Margin="0,127,0,0" VerticalAlignment="Top" Width="340" Grid.ColumnSpan="2">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <TextBlock Text="{Binding}" FontSize="18"/>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+        <ScrollViewer HorizontalAlignment="Left" Height="100" Margin="10,606,0,0" VerticalAlignment="Top" Width="329" Grid.ColumnSpan="2">
+            <TextBlock x:Name="txbMessage" HorizontalAlignment="Stretch" TextWrapping="Wrap" Text="Messages" VerticalAlignment="Top" Width="329"/>
+        </ScrollViewer>
+        <Button x:Name="btnOrder" Content="Order" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,521,0,0" Width="340" Height="80" FontSize="24" Grid.ColumnSpan="2" Click="btnOrder_Click"/>
+        <TextBlock x:Name="txbSubGenres" HorizontalAlignment="Center" Text="Sub Genres: _" TextWrapping="Wrap" VerticalAlignment="Top" Margin="0,92,0,0" FontSize="14" Grid.ColumnSpan="2" Width="331" TextAlignment="Center"/>
+
+    </Grid>
+</Page>

@@ -1,0 +1,35 @@
+﻿<Page
+    x:Class="GameStoreUniversal.pgGame"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:GameStoreUniversal"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" Loaded="Page_Loaded">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="11*"/>
+            <ColumnDefinition Width="29*"/>
+        </Grid.ColumnDefinitions>
+        <TextBlock x:Name="txbGenreName" HorizontalAlignment="Left" Text="Item Details" TextWrapping="Wrap" VerticalAlignment="Top" Margin="13,10,0,0" FontSize="24" Grid.Column="1" TextAlignment="Center" Height="32" Width="126"/>
+        <ScrollViewer HorizontalAlignment="Center" Height="100" Margin="0,606,0,0" VerticalAlignment="Top" Width="329" Grid.ColumnSpan="2">
+            <TextBlock x:Name="txbErrorMessage" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Messages" VerticalAlignment="Top" Width="329" Margin="0,0,0,0"/>
+        </ScrollViewer>
+        <Button x:Name="btnOrder" Content="Confirm Order" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,521,0,0" Width="340" Height="80" FontSize="24" Grid.ColumnSpan="2" Click="btnOrder_Click"/>
+        <Rectangle HorizontalAlignment="Center" Height="202" Margin="0,47,0,0" VerticalAlignment="Top" Width="340" Fill="#FFF2F2F2" Grid.ColumnSpan="2"/>
+        <TextBlock x:Name="txbTitle" HorizontalAlignment="Center" Margin="0,50,0,0" Text="_" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="24" Grid.ColumnSpan="2" Width="314" Height="32" TextAlignment="Left"/>
+        <TextBlock x:Name="txbRelease" HorizontalAlignment="Center" Margin="0,87,0,0" Text="Released: _" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="20" Grid.ColumnSpan="2" Width="314" Height="32" TextAlignment="Left"/>
+        <TextBlock x:Name="txbQuantity" HorizontalAlignment="Center" Margin="0,121,0,0" Text="Stock: _copies left" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="20" Grid.ColumnSpan="2" Width="314" Height="32" TextAlignment="Left"/>
+        <TextBlock x:Name="txbPrice" HorizontalAlignment="Center" Margin="0,188,0,0" Text="$_" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="36" Grid.ColumnSpan="2" Width="314" Height="47" TextAlignment="Left"/>
+        <TextBox x:Name="txtName" HorizontalAlignment="Center" Text="" VerticalAlignment="Top" Margin="0,376,0,0" Grid.ColumnSpan="2" Width="340" Height="46" TextAlignment="Center" FontSize="24" PlaceholderText="Name"/>
+        <TextBlock x:Name="textBlock_Copy1" HorizontalAlignment="Left" Margin="71,344,0,0" Text="Name" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="20" Width="65" Height="32" TextAlignment="Left" Grid.ColumnSpan="2"/>
+        <TextBox x:Name="txtCity" HorizontalAlignment="Center" Text="" VerticalAlignment="Top" Margin="0,459,0,0" Grid.ColumnSpan="2" Width="340" Height="46" TextAlignment="Center" FontSize="24" PlaceholderText="City"/>
+        <TextBlock x:Name="textBlock_Copy2" HorizontalAlignment="Left" Margin="71,427,0,0" Text="City" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="20" Width="65" Height="32" TextAlignment="Left" Grid.ColumnSpan="2"/>
+        <TextBlock x:Name="txbType" HorizontalAlignment="Center" Margin="0,156,0,0" Text="Type: _" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="20" Grid.ColumnSpan="2" Width="314" Height="32" TextAlignment="Left"/>
+        <TextBox x:Name="txtOrderQuantity" HorizontalAlignment="Left" Text="" VerticalAlignment="Top" Margin="76,271,0,0" Width="120" Height="83" TextAlignment="Center" FontSize="48" PlaceholderText="1" Grid.Column="1"/>
+        <TextBlock x:Name="textBlock_Copy" HorizontalAlignment="Left" Margin="71,281,0,0" Text="Order Quantity" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="20" Width="81" Height="57" TextAlignment="Left" Grid.ColumnSpan="2"/>
+
+    </Grid>
+</Page>
