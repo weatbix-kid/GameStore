@@ -45,7 +45,7 @@ namespace GameStoreAdminApp
             _Game.Quantity = Convert.ToInt16(txtQuantity.Text);
             _Game.ReleaseDate = txtReleaseDate.Text;
             _Game.DateTimeModified = string.Format("{0} {1}", DateTime.Now.ToShortDateString(), DateTime.Now.ToShortTimeString());
-            _Game.Discount = Convert.ToDouble(txtDiscount.Text);
+            _Game.Discount = Convert.ToDouble(txtDiscount.Text == string.Empty ? "0" : txtDiscount.Text);
         }
     }
 }

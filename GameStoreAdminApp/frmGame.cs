@@ -61,13 +61,23 @@ namespace GameStoreAdminApp
             _Game.DateTimeModified = "Test";
         }
 
+        private async void checkExistingGameType()
+        {
+            List<string> lcTitle = await ServiceClient.GetGameTitlesAsync(txtName.Text, _Game.GameType);
+            if (!string.IsNullOrEmpty(txtName.Text) && lcTitle.Count <= 0)
+                MessageBox.Show(await ServiceClient.PostGameAsync(_Game), "", MessageBoxButtons.OK, MessageBoxIcon.None);
+            else
+                MessageBox.Show("Invalid game name, please use another name");
+        }
+
         private async void btnOK_Click(object sender, EventArgs e)
         {
             pushData();
-            if (txtName.Enabled)
-                MessageBox.Show(await ServiceClient.PostGameAsync(_Game), "Success", MessageBoxButtons.OK, MessageBoxIcon.None);
+            if (txtName.Enabled) {
+                checkExistingGameType();
+            }
             else
-                MessageBox.Show(await ServiceClient.UpdateGameAsync(_Game), "Success", MessageBoxButtons.OK, MessageBoxIcon.None);
+                MessageBox.Show(await ServiceClient.UpdateGameAsync(_Game), "", MessageBoxButtons.OK, MessageBoxIcon.None);
             Close();
         }
 

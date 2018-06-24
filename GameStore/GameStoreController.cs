@@ -135,6 +135,18 @@ namespace GameStore
             }
         }
 
+        public List<string> GetGameTitles(string Title, string GameType)
+        {
+            Dictionary<string, object> par = new Dictionary<string, object>(2);
+            par.Add("Title", Title);
+            par.Add("GameType", GameType);
+            DataTable lcResult = clsDbConnection.GetDataTable("SELECT Title FROM Game WHERE Title = @Title AND GameType = @GameType", par);
+            List<string> lcTitle = new List<string>();
+            foreach (DataRow dr in lcResult.Rows)
+                lcTitle.Add((string)dr[0]);
+            return lcTitle;
+        }
+
         public List<string> GetGameTitle(int ID)
         {
             Dictionary<string, object> par = new Dictionary<string, object>(1);
@@ -185,14 +197,14 @@ namespace GameStore
             }
         }
 
-        public string DeleteGame(string GameTitle)
+        public string DeleteGame(int GameID)
         { // Delete
             try
             {
                 Dictionary<string, object> par = new Dictionary<string, object>(1);
-                par.Add("Title", GameTitle);
+                par.Add("ID", GameID);
                 int lcRecCount = clsDbConnection.Execute(
-                "DELETE FROM Game WHERE Title = @Title", par);
+                "DELETE FROM Game WHERE GameID = @ID", par);
                 if (lcRecCount == 1)
                     return "Record removed";
                 else

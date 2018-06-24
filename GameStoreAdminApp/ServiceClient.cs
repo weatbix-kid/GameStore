@@ -46,6 +46,13 @@ namespace GameStoreAdminApp
                 (await lcHttpClient.GetStringAsync("http://localhost:60064/api/gamestore/GetTotalOrdersValue/"));
         }
 
+        internal async static Task<List<string>> GetGameTitlesAsync(string prTitle, string prGameType)
+        {
+            using (HttpClient lcHttpClient = new HttpClient())
+                return JsonConvert.DeserializeObject<List<string>>
+                (await lcHttpClient.GetStringAsync(string.Format("http://localhost:60064/api/gamestore/GetGameTitles?Title={0}&GameType={1}", prTitle, prGameType)));
+        }
+
         internal async static Task<List<string>> GetGameTitleAsync(int prID)
         {
             using (HttpClient lcHttpClient = new HttpClient())
@@ -97,7 +104,7 @@ namespace GameStoreAdminApp
             using (HttpClient lcHttpClient = new HttpClient())
             {
                 HttpResponseMessage lcRespMessage = await lcHttpClient.DeleteAsync
-                ($"http://localhost:60064/api/gamestore/DeleteGame?GameTitle={prGame.Title}");
+                ($"http://localhost:60064/api/gamestore/DeleteGame?GameID={prGame.GameID}");
                 return await lcRespMessage.Content.ReadAsStringAsync();
             }
         }
