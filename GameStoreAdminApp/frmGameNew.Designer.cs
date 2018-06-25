@@ -28,16 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.txtWarranty = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
+            this.nudWarranty = new System.Windows.Forms.NumericUpDown();
+            ((System.ComponentModel.ISupportInitialize)(this.nudQuantity)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudPrice)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudWarranty)).BeginInit();
             this.SuspendLayout();
-            // 
-            // txtWarranty
-            // 
-            this.txtWarranty.Location = new System.Drawing.Point(97, 144);
-            this.txtWarranty.Name = "txtWarranty";
-            this.txtWarranty.Size = new System.Drawing.Size(96, 20);
-            this.txtWarranty.TabIndex = 48;
             // 
             // label5
             // 
@@ -48,23 +44,34 @@
             this.label5.TabIndex = 49;
             this.label5.Text = "Warrant Mo";
             // 
+            // nudWarranty
+            // 
+            this.nudWarranty.Location = new System.Drawing.Point(97, 145);
+            this.nudWarranty.Name = "nudWarranty";
+            this.nudWarranty.Size = new System.Drawing.Size(96, 20);
+            this.nudWarranty.TabIndex = 50;
+            // 
             // frmGameNew
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.ClientSize = new System.Drawing.Size(352, 176);
+            this.Controls.Add(this.nudWarranty);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.txtWarranty);
             this.Name = "frmGameNew";
-            this.Controls.SetChildIndex(this.txtWarranty, 0);
+            this.Controls.SetChildIndex(this.nudQuantity, 0);
+            this.Controls.SetChildIndex(this.nudPrice, 0);
             this.Controls.SetChildIndex(this.label5, 0);
+            this.Controls.SetChildIndex(this.nudWarranty, 0);
+            ((System.ComponentModel.ISupportInitialize)(this.nudQuantity)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudPrice)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudWarranty)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.TextBox txtWarranty;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.NumericUpDown nudWarranty;
     }
 }

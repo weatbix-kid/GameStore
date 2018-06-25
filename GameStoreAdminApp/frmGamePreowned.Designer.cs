@@ -29,7 +29,8 @@
         private void InitializeComponent()
         {
             this.label5 = new System.Windows.Forms.Label();
-            this.txtDiscount = new System.Windows.Forms.TextBox();
+            this.nudDiscount = new System.Windows.Forms.NumericUpDown();
+            ((System.ComponentModel.ISupportInitialize)(this.nudDiscount)).BeginInit();
             this.SuspendLayout();
             // 
             // label5
@@ -41,22 +42,23 @@
             this.label5.TabIndex = 48;
             this.label5.Text = "Discount %";
             // 
-            // txtDiscount
+            // nudDiscount
             // 
-            this.txtDiscount.Location = new System.Drawing.Point(97, 146);
-            this.txtDiscount.Name = "txtDiscount";
-            this.txtDiscount.Size = new System.Drawing.Size(96, 20);
-            this.txtDiscount.TabIndex = 5;
+            this.nudDiscount.Location = new System.Drawing.Point(97, 147);
+            this.nudDiscount.Name = "nudDiscount";
+            this.nudDiscount.Size = new System.Drawing.Size(96, 20);
+            this.nudDiscount.TabIndex = 49;
             // 
             // frmGamePreowned
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.ClientSize = new System.Drawing.Size(352, 176);
-            this.Controls.Add(this.txtDiscount);
+            this.Controls.Add(this.nudDiscount);
             this.Controls.Add(this.label5);
             this.Name = "frmGamePreowned";
             this.Controls.SetChildIndex(this.label5, 0);
-            this.Controls.SetChildIndex(this.txtDiscount, 0);
+            this.Controls.SetChildIndex(this.nudDiscount, 0);
+            ((System.ComponentModel.ISupportInitialize)(this.nudDiscount)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -65,6 +67,6 @@
         #endregion
 
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox txtDiscount;
+        private System.Windows.Forms.NumericUpDown nudDiscount;
     }
 }

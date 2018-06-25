@@ -75,10 +75,13 @@ namespace GameStoreAdminApp
         private void btnEdit_Click(object sender, EventArgs e)
         {
             if (lstGames.SelectedItem != null)
+            {
                 frmGame.DispatchWorkForm(lstGames.SelectedValue as clsAllGame);
+                refreshFormFromDB(_Genre.GenreName);
+            }
             else
                 MessageBox.Show("Please select and item from the list", "Selection missing", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-            refreshFormFromDB(_Genre.GenreName);
+            // refreshFormFromDB(_Genre.GenreName);
 
         }
 
@@ -107,6 +110,7 @@ namespace GameStoreAdminApp
                 inputBox.Close();
                 Console.WriteLine("No response");
             }
+            refreshFormFromDB(_Genre.GenreName);
         }
 
         private async void btnRemove_Click(object sender, EventArgs e)

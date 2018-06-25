@@ -46,8 +46,8 @@ namespace GameStoreAdminApp
         protected virtual void UpdateDisplay()
         {
             txtName.Text = _Game.Title;
-            txtPrice.Text = _Game.Price.ToString();
-            txtQuantity.Text = _Game.Quantity.ToString();
+            nudPrice.Value = Convert.ToDecimal(_Game.Price);
+            nudQuantity.Value = _Game.Quantity;
             txtReleaseDate.Text = _Game.ReleaseDate;
             lblModified.Text = _Game.DateTimeModified;
         }
@@ -55,8 +55,8 @@ namespace GameStoreAdminApp
         protected virtual void pushData()
         {
             _Game.Title = txtName.Text;
-            _Game.Price = Convert.ToDouble(txtPrice.Text);
-            _Game.Quantity = Convert.ToInt16(txtQuantity.Text);
+            _Game.Price = Convert.ToDouble(nudPrice.Value);
+            _Game.Quantity = Convert.ToInt16(nudQuantity.Value);
             _Game.ReleaseDate = txtReleaseDate.Text;
             _Game.DateTimeModified = "Test";
         }

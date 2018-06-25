@@ -28,9 +28,7 @@ namespace GameStoreAdminApp
         /// </summary>
         private void InitializeComponent()
         {
-            this.txtQuantity = new System.Windows.Forms.TextBox();
             this.Label2 = new System.Windows.Forms.Label();
-            this.txtPrice = new System.Windows.Forms.TextBox();
             this.Label1 = new System.Windows.Forms.Label();
             this.txtName = new System.Windows.Forms.TextBox();
             this.Label3 = new System.Windows.Forms.Label();
@@ -39,14 +37,11 @@ namespace GameStoreAdminApp
             this.label4 = new System.Windows.Forms.Label();
             this.txtReleaseDate = new System.Windows.Forms.TextBox();
             this.lblModified = new System.Windows.Forms.Label();
+            this.nudQuantity = new System.Windows.Forms.NumericUpDown();
+            this.nudPrice = new System.Windows.Forms.NumericUpDown();
+            ((System.ComponentModel.ISupportInitialize)(this.nudQuantity)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudPrice)).BeginInit();
             this.SuspendLayout();
-            // 
-            // txtQuantity
-            // 
-            this.txtQuantity.Location = new System.Drawing.Point(97, 81);
-            this.txtQuantity.Name = "txtQuantity";
-            this.txtQuantity.Size = new System.Drawing.Size(96, 20);
-            this.txtQuantity.TabIndex = 3;
             // 
             // Label2
             // 
@@ -55,13 +50,6 @@ namespace GameStoreAdminApp
             this.Label2.Size = new System.Drawing.Size(80, 16);
             this.Label2.TabIndex = 46;
             this.Label2.Text = "Quantity";
-            // 
-            // txtPrice
-            // 
-            this.txtPrice.Location = new System.Drawing.Point(97, 49);
-            this.txtPrice.Name = "txtPrice";
-            this.txtPrice.Size = new System.Drawing.Size(96, 20);
-            this.txtPrice.TabIndex = 2;
             // 
             // Label1
             // 
@@ -74,6 +62,7 @@ namespace GameStoreAdminApp
             // txtName
             // 
             this.txtName.Location = new System.Drawing.Point(97, 17);
+            this.txtName.MaxLength = 30;
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(96, 20);
             this.txtName.TabIndex = 1;
@@ -115,6 +104,7 @@ namespace GameStoreAdminApp
             // txtReleaseDate
             // 
             this.txtReleaseDate.Location = new System.Drawing.Point(97, 114);
+            this.txtReleaseDate.MaxLength = 10;
             this.txtReleaseDate.Name = "txtReleaseDate";
             this.txtReleaseDate.Size = new System.Drawing.Size(96, 20);
             this.txtReleaseDate.TabIndex = 4;
@@ -128,15 +118,29 @@ namespace GameStoreAdminApp
             this.lblModified.TabIndex = 47;
             this.lblModified.Text = "Last modified:";
             // 
+            // nudQuantity
+            // 
+            this.nudQuantity.Location = new System.Drawing.Point(97, 81);
+            this.nudQuantity.Name = "nudQuantity";
+            this.nudQuantity.Size = new System.Drawing.Size(96, 20);
+            this.nudQuantity.TabIndex = 48;
+            // 
+            // nudPrice
+            // 
+            this.nudPrice.Location = new System.Drawing.Point(97, 47);
+            this.nudPrice.Name = "nudPrice";
+            this.nudPrice.Size = new System.Drawing.Size(96, 20);
+            this.nudPrice.TabIndex = 48;
+            // 
             // frmGame
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(352, 176);
+            this.Controls.Add(this.nudPrice);
+            this.Controls.Add(this.nudQuantity);
             this.Controls.Add(this.lblModified);
-            this.Controls.Add(this.txtQuantity);
             this.Controls.Add(this.Label2);
-            this.Controls.Add(this.txtPrice);
             this.Controls.Add(this.Label1);
             this.Controls.Add(this.txtReleaseDate);
             this.Controls.Add(this.label4);
@@ -147,16 +151,15 @@ namespace GameStoreAdminApp
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "frmGame";
             this.Text = "Create a new record";
+            ((System.ComponentModel.ISupportInitialize)(this.nudQuantity)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudPrice)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        internal System.Windows.Forms.TextBox txtQuantity;
         internal System.Windows.Forms.Label Label2;
-        internal System.Windows.Forms.TextBox txtPrice;
         internal System.Windows.Forms.Label Label1;
         internal System.Windows.Forms.TextBox txtName;
         internal System.Windows.Forms.Label Label3;
@@ -165,5 +168,7 @@ namespace GameStoreAdminApp
         internal System.Windows.Forms.Label label4;
         internal System.Windows.Forms.TextBox txtReleaseDate;
         internal System.Windows.Forms.Label lblModified;
+        protected System.Windows.Forms.NumericUpDown nudQuantity;
+        protected System.Windows.Forms.NumericUpDown nudPrice;
     }
 }

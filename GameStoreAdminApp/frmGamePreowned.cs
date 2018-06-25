@@ -31,21 +31,21 @@ namespace GameStoreAdminApp
             this.Text = string.Format("{0} - Details", _Game.Title);
             txtName.Enabled = string.IsNullOrEmpty(_Game.Title);
             txtName.Text = _Game.Title;
-            txtPrice.Text = _Game.Price.ToString();
-            txtQuantity.Text = _Game.Quantity.ToString();
+            nudPrice.Value = Convert.ToDecimal(_Game.Price);
+            nudQuantity.Value = _Game.Quantity;
             txtReleaseDate.Text = _Game.ReleaseDate;
             lblModified.Text = string.Format("Last Modified:\n{0}", _Game.DateTimeModified);
-            txtDiscount.Text = _Game.Discount.ToString();
+            nudDiscount.Value = Convert.ToDecimal(_Game.Discount);
         }
 
         protected override void pushData()
         {
             _Game.Title = txtName.Text;
-            _Game.Price = Convert.ToDouble(txtPrice.Text);
-            _Game.Quantity = Convert.ToInt16(txtQuantity.Text);
+            _Game.Price = Convert.ToDouble(nudPrice.Value);
+            _Game.Quantity = Convert.ToInt16(nudQuantity.Value);
             _Game.ReleaseDate = txtReleaseDate.Text;
             _Game.DateTimeModified = string.Format("{0} {1}", DateTime.Now.ToShortDateString(), DateTime.Now.ToShortTimeString());
-            _Game.Discount = Convert.ToDouble(txtDiscount.Text == string.Empty ? "0" : txtDiscount.Text);
+            _Game.Discount = Convert.ToDouble(nudDiscount.Value);
         }
     }
 }
